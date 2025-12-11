@@ -8,3 +8,4 @@ public class javaBasics {
         System.out.println("Sum: " + (a + b));
         sc.close();
 }
+}
