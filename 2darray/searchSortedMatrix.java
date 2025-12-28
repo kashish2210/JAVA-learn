@@ -30,18 +30,32 @@ public class searchSortedMatrix{
         //         }
         //     }
         // }
-        //StairCase search O[] {for column && rows sorted}
-        int row = 0, col = matrix[0].length - 1 ;
-        while(row<matrix.length && col >= 0){
+        //StairCase search O[m+n] {for column && rows sorted}[bottom approach]
+        // int row = 0, col = matrix[0].length - 1 ;
+        // while(row<matrix.length && col >= 0){
+        //     if(matrix[row][col] == key){
+        //         System.out.println("found key at (" + row + ","+col +")");
+        //         return true;
+        //     }
+        //     else if(key < matrix[row][col]){
+        //         col--;
+        //     }
+        //     else if(key > matrix[row][col]){
+        //         row++;
+        //     }
+        // }
+        //StairCase search O[m+n] {for column && rows sorted}[top approach]
+        int row = matrix.length -1, col = 0 ;
+        while(col<matrix[0].length && row >= 0){
             if(matrix[row][col] == key){
                 System.out.println("found key at (" + row + ","+col +")");
                 return true;
             }
             else if(key < matrix[row][col]){
-                col--;
+                row--;
             }
             else if(key > matrix[row][col]){
-                row++;
+                col++;
             }
         }
         System.out.println("not found!");
