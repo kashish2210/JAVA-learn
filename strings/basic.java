@@ -23,8 +23,9 @@ public class basic {
         System.out.println(fullname.charAt(3));
 
         printletters(fullname);
-
-
+        String s = ", , , ,        a, eaefa";
+        String[] words = s.split("\\s+");
+        System.out.println(words);
     }
 
 }
